@@ -1,5 +1,7 @@
 import cv2 as cv
 from scale import rescale_frame
+import numpy as np
+from chResolution import chRes
 import os
 os.chdir("assets")
 #print(os.getcwd())
@@ -34,52 +36,37 @@ os.chdir("assets")
     
 #     dimensions = (width,height)
 #     return cv.resize(frame,dimensions,interpolation=cv.INTER_AREA)
-video = cv.VideoCapture("video_gato.mp4")
-while True:
-    isTrue, frame = video.read()
-    menor = rescale_frame(frame,0.50)
-    cv.imshow("VIDEO DO GATIM",frame)
-    cv.imshow("menor",menor)
-    if cv.waitKey(20) & 0xFF == ord('d'):
-        break
-cv.release()
-cv.destroyAllWindows()
-cv.waitKey(0)
 
 
+# video = cv.VideoCapture("video_gato.mp4")
+# while True:
+#     isTrue, frame = video.read()
+#     menor = rescale_frame(frame,0.50)
+#     cv.imshow("VIDEO DO GATIM",frame)
+#     cv.imshow("menor",menor)
+#     if cv.waitKey(20) & 0xFF == ord('d'):
+#         break
+# cv.release()
+# cv.destroyAllWindows()
+# cv.waitKey(0)
 
+#------------- MUDANDO A RESOLUÇÃO DA CAPTURA DO WEBCAM ---------------------------------------------------
 
+# video = cv.VideoCapture(0)
+# while True:
+#     _, frame = video.read()
+#     novo = rescale_frame(frame,0.25)
+#     cv.imshow("VIDEO",novo)
+#     if cv.waitKey(20) & 0xFF==ord('d'):
+#         break
+# cv.release()
+# cv.destroyAllWindows()
 
+#------------- DESENHANDO TEXTOS E FORMAS ---------------------------------------------------
+# podemos 
+#
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 
 
 
