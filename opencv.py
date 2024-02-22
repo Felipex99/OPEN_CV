@@ -66,7 +66,41 @@ os.chdir("assets")
 # podemos 
 #
 
-    
+
+
+
+
+def change(frame, scale=0.5):
+    width = int(frame.shape[1]*scale)
+    height = int(frame.shape[0]*scale)
+    dimension = (width,height)
+    return cv.resize(frame,dimension,interpolation=cv.INTER_AREA)
+
+
+video = cv.VideoCapture("C:/Users/DELL/Documents/Projetos de IA/OPEN_CV/assets/video_cachorro.mp4")
+while True:
+    _, frame = video.read()
+    cv.imshow("VIDEO",change(frame))
+    if(cv.waitKey(20) & 0xFF==ord('d')):
+        break
+cv.release()
+cv.destroyWindow
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
